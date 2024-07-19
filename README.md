@@ -1,0 +1,2 @@
+# myshopstatistics-proto
+proto definitions
