@@ -37,12 +37,12 @@ cd ../../
 git config --global user.email "maildonvader@gmail.com"
 git config --global user.name "maildonvader"
 
-
 # Add and commit changes
-git add . && git commit -am "proto update" || true
+git commit -am "proto update" || true
 
 echo "golang/${SERVICE_NAME}/${RELEASE_VERSION}"
-# Force replace the tag
+# Force replace the tag if it already exists since this will be the latest execution of proto-gen script
+
 # Create and push a tag
 git tag -fa "golang/${SERVICE_NAME}/${RELEASE_VERSION}" -m "golang/${SERVICE_NAME}/${RELEASE_VERSION}"
-git push -f origin refs/tags/golang/${SERVICE_NAME}/${RELEASE_VERSION}
+git push -f origin refs/tags/golang/${SERVICE_NAME}/${RELEASE_VERSION} 
