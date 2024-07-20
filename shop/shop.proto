@@ -1,0 +1,30 @@
+syntax = "proto3";
+
+option go_package = "github.com/fabianrwx/myshopstatistics-proto/golang/shop";
+
+// Shop service definition
+service ShopService {
+    rpc RegisterShop(RegisterShopRequest) returns (RegisterShopResponse);
+    rpc GetShop(GetShopRequest) returns (Shop);
+    // Other RPC methods as needed
+}
+
+// Request and Response messages
+message RegisterShopRequest {
+    string name = 1;
+    // Other fields as needed
+}
+
+message RegisterShopResponse {
+    string shop_id = 1;
+}
+
+message GetShopRequest {
+    string shop_id = 1;
+}
+
+message Shop {
+    string id = 1;
+    string name = 2;
+    // Other fields as needed
+}

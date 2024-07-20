@@ -1,0 +1,76 @@
+syntax = "proto3";
+
+option go_package = "github.com/fabianrwx/myshopstatistics-proto/golang/repairorder";
+
+// Repair order service definition
+service RepairOrderService {
+    rpc CreateRepairOrder(CreateRepairOrderRequest) returns (CreateRepairOrderResponse);
+    rpc GetRepairOrder(GetRepairOrderRequest) returns (RepairOrder);
+    rpc ListRepairOrders(ListRepairOrdersRequest) returns (ListRepairOrdersResponse);
+    // Other RPC methods as needed
+}
+
+// Request and Response messages
+message CreateRepairOrderRequest {
+    string customer_id = 1;
+    string vehicle_id = 2;
+    repeated RepairOrderItem items = 3;
+    // Other fields as needed
+}
+
+message CreateRepairOrderResponse {
+    string repair_order_id = 1;
+}
+
+message GetRepairOrderRequest {
+    string repair_order_id = 1;
+}
+
+message ListRepairOrdersRequest {
+    string customer_id = 1;
+}
+
+message ListRepairOrdersResponse {
+    repeated RepairOrder repair_orders = 1;
+}
+
+message RepairOrder {
+    string id = 1;
+    string customer_id = 2;
+    string vehicle_id = 3;
+    repeated RepairOrderItem items = 4;
+    string status = 5; // e.g., Pending, Completed
+    // Other fields as needed
+}
+
+message RepairOrderItem {
+    string id = 1;
+    string repair_order_id = 2;
+    string item_type = 3; // e.g., Part, Labor
+    Part part = 4;
+    Labor labor = 5;
+}
+
+message Part {
+    string id = 1;
+    string description = 2;
+    int32 quantity = 3;
+    double cost = 4;
+    double markup = 5;
+    double subtotal = 6;
+    double total = 7;
+}
+
+message Labor {
+    string id = 1;
+    string description = 2;
+    double hours = 3;
+    double subtotal = 4;
+    double total = 5;
+    repeated TechnicianLabor technician_labor = 6;
+}
+
+message TechnicianLabor {
+    string technician_id = 1;
+    double hours = 2;
+}

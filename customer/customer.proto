@@ -1,0 +1,36 @@
+syntax = "proto3";
+
+option go_package = "github.com/fabianrwx/myshopstatistics-proto/golang/customer";
+
+// Customer service definition
+service CustomerService {
+    rpc CreateCustomer(CreateCustomerRequest) returns (CreateCustomerResponse);
+    rpc GetCustomer(GetCustomerRequest) returns (Customer);
+    // Other RPC methods as needed
+}
+
+// Request and Response messages
+message CreateCustomerRequest {
+    string shop_id = 1;
+    string name = 2;
+    string email = 3;
+    string phone = 4;
+    // Other fields as needed
+}
+
+message CreateCustomerResponse {
+    string customer_id = 1;
+}
+
+message GetCustomerRequest {
+    string customer_id = 1;
+}
+
+message Customer {
+    string id = 1;
+    string shop_id = 2;
+    string name = 3;
+    string email = 4;
+    string phone = 5;
+    // Other fields as needed
+}
