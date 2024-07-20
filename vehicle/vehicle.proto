@@ -7,7 +7,6 @@ service VehicleService {
     rpc CreateVehicle(CreateVehicleRequest) returns (CreateVehicleResponse);
     rpc GetVehicle(GetVehicleRequest) returns (Vehicle);
     rpc ListVehicles(ListVehiclesRequest) returns (ListVehiclesResponse);
-    // Other RPC methods as needed
 }
 
 // Request and Response messages
@@ -45,4 +44,3 @@ message Vehicle {
     string engine = 6;
     // Other fields as needed
 }
-v

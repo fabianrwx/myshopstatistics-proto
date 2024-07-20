@@ -11,12 +11,17 @@ service UserService {
 
 // Request and Response messages
 message CreateUserRequest {
-    string shop_id = 1;
-    string name = 2;
-    string email = 3;
-    string role = 4;
-    // Other fields as needed
+    string name = 1;
+    string email = 2;
+    string role = 3; // e.g., Owner, Admin, Manager, Technician
+    string password = 4;
+    string phone = 5;
+    string address = 6;
+    string city = 7;
+    string state = 8;
+    string zip = 9;
 }
+
 
 message CreateUserResponse {
     string user_id = 1;
@@ -28,9 +33,13 @@ message GetUserRequest {
 
 message User {
     string id = 1;
-    string shop_id = 2;
-    string name = 3;
-    string email = 4;
-    string role = 5;
-    // Other fields as needed
+    string name = 2;
+    string email = 3;
+    string role = 4; // e.g., Owner, Admin, Manager, Technician
+    string password = 5;
+    string phone = 6;
+    string address = 7;
+    string city = 8;
+    string state = 9;
+    string zip = 10;
 }

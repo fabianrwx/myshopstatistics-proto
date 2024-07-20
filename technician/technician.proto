@@ -7,7 +7,6 @@ service TechnicianService {
     rpc CreateTechnician(CreateTechnicianRequest) returns (CreateTechnicianResponse);
     rpc GetTechnician(GetTechnicianRequest) returns (Technician);
     rpc ListTechnicians(ListTechniciansRequest) returns (ListTechniciansResponse);
-    // Other RPC methods as needed
 }
 
 // Request and Response messages
@@ -15,7 +14,6 @@ message CreateTechnicianRequest {
     string shop_id = 1;
     string name = 2;
     double hour_rate = 3;
-    // Other fields as needed
 }
 
 message CreateTechnicianResponse {

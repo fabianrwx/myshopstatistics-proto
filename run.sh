@@ -26,7 +26,7 @@ cd golang/${SERVICE_NAME}
 
 # Initialize Go module if not already initialized
 if [ ! -f "go.mod" ]; then
-  go mod init github.com/fabianrwx/goshopping-pb/golang/${SERVICE_NAME} || true
+  go mod init github.com/fabianrwx/myshopstatistics-proto/golang/${SERVICE_NAME} || true
 fi
 
 go mod tidy

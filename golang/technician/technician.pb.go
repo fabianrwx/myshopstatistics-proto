@@ -28,7 +28,7 @@ type CreateTechnicianRequest struct {
 
 	ShopId   string  `protobuf:"bytes,1,opt,name=shop_id,json=shopId,proto3" json:"shop_id,omitempty"`
 	Name     string  `protobuf:"bytes,2,opt,name=name,proto3" json:"name,omitempty"`
-	HourRate float64 `protobuf:"fixed64,3,opt,name=hour_rate,json=hourRate,proto3" json:"hour_rate,omitempty"` // Other fields as needed
+	HourRate float64 `protobuf:"fixed64,3,opt,name=hour_rate,json=hourRate,proto3" json:"hour_rate,omitempty"`
 }
 
 func (x *CreateTechnicianRequest) Reset() {

@@ -6,13 +6,19 @@ option go_package = "github.com/fabianrwx/myshopstatistics-proto/golang/shop";
 service ShopService {
     rpc RegisterShop(RegisterShopRequest) returns (RegisterShopResponse);
     rpc GetShop(GetShopRequest) returns (Shop);
-    // Other RPC methods as needed
 }
 
 // Request and Response messages
 message RegisterShopRequest {
     string name = 1;
-    // Other fields as needed
+    string owner_id = 2;
+    string address = 3;
+    string city = 4;
+    string state = 5;
+    string zip = 6;
+    double tax_rate = 7;
+    double shop_rate = 8; // Hourly rate for the shop
+    double phone = 9;
 }
 
 message RegisterShopResponse {
@@ -26,5 +32,4 @@ message GetShopRequest {
 message Shop {
     string id = 1;
     string name = 2;
-    // Other fields as needed
 }
