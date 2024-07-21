@@ -20,8 +20,8 @@ message CreateAccountRequest {
     string city = 7;
     string state = 8;
     string zip = 9;
-}
 
+}
 
 message CreateAccountResponse {
     uint32 account_id = 1;
@@ -41,6 +41,7 @@ message GetAccountResponse {
     string city = 7;
     string state = 8;
     string zip = 9;
+    bool verified = 10;
 }
 
 message Account {
@@ -54,4 +55,6 @@ message Account {
     string city = 8;
     string state = 9;
     string zip = 10;
+    bool verified = 11;
+    int32 code = 12;
 }
