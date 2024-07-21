@@ -1,16 +1,16 @@
 syntax = "proto3";
 
-option go_package = "github.com/fabianrwx/myshopstatistics-proto/golang/user";
+option go_package = "github.com/fabianrwx/myshopstatistics-proto/golang/account";
 
-// User service definition
-service UserService {
-    rpc CreateUser(CreateUserRequest) returns (CreateUserResponse);
-    rpc GetUser(GetUserRequest) returns (GetUserResponse);
+// Account service definition
+service AccountService {
+    rpc CreateAccount(CreateAccountRequest) returns (CreateAccountResponse);
+    rpc GetAccount(GetAccountRequest) returns (GetAccountResponse);
     // Other RPC methods as needed
 }
 
 // Request and Response messages
-message CreateUserRequest {
+message CreateAccountRequest {
     string name = 1;
     string email = 2;
     string role = 3; // e.g., Owner, Admin, Manager, Technician
@@ -23,16 +23,16 @@ message CreateUserRequest {
 }
 
 
-message CreateUserResponse {
-    uint64 user_id = 1;
+message CreateAccountResponse {
+    uint32 account_id = 1;
 }
 
-message GetUserRequest {
-    uint64 user_id = 1;
+message GetAccountRequest {
+    uint32 account_id = 1;
 }
 
-message GetUserResponse {
-    uint64 id = 1;
+message GetAccountResponse {
+    uint32 id = 1;
     string name = 2;
     string email = 3;
     string role = 4; // e.g., Owner, Admin, Manager, Technician
@@ -43,8 +43,8 @@ message GetUserResponse {
     string zip = 9;
 }
 
-message User {
-    uint64 id = 1;
+message Account {
+    uint32 id = 1;
     string name = 2;
     string email = 3;
     string role = 4; // e.g., Owner, Admin, Manager, Technician

@@ -1,4 +1,4 @@
-module github.com/fabianrwx/myshopstatistics-proto/golang/user
+module github.com/fabianrwx/myshopstatistics-proto/golang/account
 
 go 1.22.3
 
