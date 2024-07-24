@@ -1,0 +1,22 @@
+syntax = "proto3";
+
+package account;
+
+option go_package = "github.com/fabianrwx/myshopstatistics-proto/golang/account";
+
+// Request and Response messages
+message CreateRequest {
+    string name = 1;
+    string email = 2;
+    string role = 3; // e.g., Owner, Admin, Manager, Technician
+    string password = 4;
+    string phone = 5;
+    string address = 6;
+    string city = 7;
+    string state = 8;
+    string zip = 9;
+}
+
+message CreateResponse {
+    uint32 account_id = 1;
+}

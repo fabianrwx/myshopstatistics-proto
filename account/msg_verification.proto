@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+package account;
+
+option go_package = "github.com/fabianrwx/myshopstatistics-proto/golang/account";
+
+message VerificationRequest{
+    int32 code = 1;
+    string token = 2;
+}
+
+message VerificationResponse {
+     string access_token = 1;
+     string refresh_token = 2;
+     string access_expires = 3;
+     string refresh_expires = 4;
+}

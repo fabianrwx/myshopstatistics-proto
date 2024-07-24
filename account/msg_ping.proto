@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package account;
+
+option go_package = "github.com/fabianrwx/myshopstatistics-proto/golang/account";
+
+message PingResponse {
+   string version = 1;
+   string message = 2;
+}

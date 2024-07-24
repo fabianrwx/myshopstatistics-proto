@@ -1,0 +1,34 @@
+syntax = "proto3";
+
+option go_package = "github.com/fabianrwx/myshopstatistics-proto/golang/account";
+
+import "account/msg_verification.proto";
+import "account/msg_create.proto";
+import "account/msg_get.proto";
+import "account/msg_ping.proto";
+
+import "google/protobuf/empty.proto";
+
+// Account service definition
+service AccountService {
+    rpc Ping(google.protobuf.Empty) returns (account.PingResponse);
+    rpc Create(account.CreateRequest) returns (account.CreateResponse);
+    rpc Get(account.GetRequest) returns (account.GetResponse);
+    rpc Verify(account.VerificationRequest) returns (account.VerificationResponse);
+    // Other RPC methods as needed
+}
+
+message Account {
+    uint32 id = 1;
+    string name = 2;
+    string email = 3;
+    string role = 4; // e.g., Owner, Admin, Manager, Technician
+    string password = 5;
+    string phone = 6;
+    string address = 7;
+    string city = 8;
+    string state = 9;
+    string zip = 10;
+    bool verified = 11;
+    int32 code = 12;
+}
