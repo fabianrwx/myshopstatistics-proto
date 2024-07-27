@@ -29,7 +29,7 @@ type CreateCustomerRequest struct {
 	ShopId string `protobuf:"bytes,1,opt,name=shop_id,json=shopId,proto3" json:"shop_id,omitempty"`
 	Name   string `protobuf:"bytes,2,opt,name=name,proto3" json:"name,omitempty"`
 	Email  string `protobuf:"bytes,3,opt,name=email,proto3" json:"email,omitempty"`
-	Phone  string `protobuf:"bytes,4,opt,name=phone,proto3" json:"phone,omitempty"` // Other fields as needed
+	Phone  string `protobuf:"bytes,4,opt,name=phone,proto3" json:"phone,omitempty"`
 }
 
 func (x *CreateCustomerRequest) Reset() {
@@ -195,7 +195,7 @@ type Customer struct {
 	ShopId string `protobuf:"bytes,2,opt,name=shop_id,json=shopId,proto3" json:"shop_id,omitempty"`
 	Name   string `protobuf:"bytes,3,opt,name=name,proto3" json:"name,omitempty"`
 	Email  string `protobuf:"bytes,4,opt,name=email,proto3" json:"email,omitempty"`
-	Phone  string `protobuf:"bytes,5,opt,name=phone,proto3" json:"phone,omitempty"` // Other fields as needed
+	Phone  string `protobuf:"bytes,5,opt,name=phone,proto3" json:"phone,omitempty"`
 }
 
 func (x *Customer) Reset() {
