@@ -1,0 +1,40 @@
+syntax = "proto3";
+
+option go_package = "github.com/fabianrwx/myshopstatistics-proto/golang/shop";
+
+import "google/protobuf/empty.proto";
+
+import "shop/msg_create.proto";
+import "shop/msg_get.proto";
+import "shop/msg_subscription.proto";
+
+
+message PingResponse {
+    string message = 1;
+}
+
+
+
+message Shop {
+    string id = 1;
+    string name = 2;
+    string owner_id = 3;
+    string address = 4;
+    string city = 5;
+    string state = 6;
+    string zip = 7;
+    double tax_rate = 8;
+    double shop_rate = 9; // Hourly rate for the shop
+    double phone1 = 10;
+    double phone2 = 11;
+    shop.Subscription subscription = 12;
+}
+
+
+
+// Shop service definition
+service ShopService {
+    rpc Ping(google.protobuf.Empty) returns (PingResponse);
+    rpc Create(shop.CreateRequest) returns (shop.CreateResponse);
+    rpc GetById(shop.GetByIdRequest) returns (Shop);
+}

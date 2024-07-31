@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package shop;
+
+option go_package = "github.com/fabianrwx/myshopstatistics-proto/golang/shop";
+
+message GetByIdRequest {
+    string shop_id = 1;
+}

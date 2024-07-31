@@ -1,15 +1,14 @@
 syntax = "proto3";
 
+package shop;
+
 option go_package = "github.com/fabianrwx/myshopstatistics-proto/golang/shop";
 
-// Shop service definition
-service ShopService {
-    rpc RegisterShop(RegisterShopRequest) returns (RegisterShopResponse);
-    rpc GetShop(GetShopRequest) returns (Shop);
-}
+import "shop/msg_subscription.proto";
+
 
 // Request and Response messages
-message RegisterShopRequest {
+message CreateRequest {
     string name = 1;
     string owner_id = 2;
     string address = 3;
@@ -18,18 +17,11 @@ message RegisterShopRequest {
     string zip = 6;
     double tax_rate = 7;
     double shop_rate = 8; // Hourly rate for the shop
-    double phone = 9;
+    double phone1 = 9;
+    double phone2 = 10;
+    shop.Subscription subscription = 11;
 }
 
-message RegisterShopResponse {
+message CreateResponse {
     string shop_id = 1;
-}
-
-message GetShopRequest {
-    string shop_id = 1;
-}
-
-message Shop {
-    string id = 1;
-    string name = 2;
 }

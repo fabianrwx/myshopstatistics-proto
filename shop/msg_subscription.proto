@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+package shop;
+
+option go_package = "github.com/fabianrwx/myshopstatistics-proto/golang/shop";
+
+message Subscription {
+    uint32 shop_id = 1;
+    string subscription_id = 2;
+    uint32 customer_id = 3; 
+    uint32 plan_id = 4;
+    uint32 status = 5;
+    uint32 start_date = 6;
+    uint32 end_date = 7;
+}
+

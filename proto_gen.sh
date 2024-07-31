@@ -24,6 +24,8 @@ for dir in $PROTO_DIRS; do
            --go-grpc_out="golang" --go-grpc_opt=paths=source_relative \
            "${dir_clean}"/*.proto
 
+    # Add PYTHON, DART, JAVA protoc commands here
+
     # Run go mod tidy in the output directory
     pushd "golang/$output_dir" > /dev/null
     go mod init || true
