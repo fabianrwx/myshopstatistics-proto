@@ -13,8 +13,6 @@ message PingResponse {
     string message = 1;
 }
 
-
-
 message Shop {
     string id = 1;
     string name = 2;
@@ -25,8 +23,8 @@ message Shop {
     string zip = 7;
     double tax_rate = 8;
     double shop_rate = 9; // Hourly rate for the shop
-    double phone1 = 10;
-    double phone2 = 11;
+    string phone1 = 10;
+    string phone2 = 11;
     shop.Subscription subscription = 12;
 }
 

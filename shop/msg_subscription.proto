@@ -7,10 +7,10 @@ option go_package = "github.com/fabianrwx/myshopstatistics-proto/golang/shop";
 message Subscription {
     uint32 shop_id = 1;
     string subscription_id = 2;
-    uint32 customer_id = 3; 
-    uint32 plan_id = 4;
-    uint32 status = 5;
-    uint32 start_date = 6;
-    uint32 end_date = 7;
+    string customer_id = 3; 
+    string plan_id = 4;
+    string status = 5;
+    string start_date = 6;
+    string end_date = 7;
 }
 
