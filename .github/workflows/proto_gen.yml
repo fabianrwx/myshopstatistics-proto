@@ -12,7 +12,6 @@ jobs:
         service:
         - account
         - customer
-        - customer
         - shop
     steps:
     - name: Install Go
