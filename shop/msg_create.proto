@@ -10,7 +10,7 @@ import "shop/msg_subscription.proto";
 // Request and Response messages
 message CreateRequest {
     string name = 1;
-    string owner_id = 2;
+    uint32 owner_id = 2;
     string address = 3;
     string city = 4;
     string state = 5;
@@ -23,5 +23,5 @@ message CreateRequest {
 }
 
 message CreateResponse {
-    string shop_id = 1;
+    uint32 shop_id = 1;
 }
