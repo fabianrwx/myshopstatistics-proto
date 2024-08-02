@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+package mailer;
+
+option go_package = "github.com/fabianrwx/myshopstatistics-proto/golang/mailer";
+
+message SendVerificationRequest {
+    string name = 1;
+    string email = 2;
+    int32 code = 3;
+}
+
+message SendVerificationResponse {
+    string message = 1;
+}

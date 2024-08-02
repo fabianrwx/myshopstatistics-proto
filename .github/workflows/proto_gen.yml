@@ -13,6 +13,7 @@ jobs:
         - account
         - customer
         - shop
+        - mailer
     steps:
     - name: Install Go
       uses: actions/setup-go@v2

@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+option go_package = "github.com/fabianrwx/myshopstatistics-proto/golang/mailer";
+
+import "google/protobuf/empty.proto";
+import "mailer/msg_verification.proto";
+
+message PingResponse {
+    string message = 1;
+}
+
+// Mailer service definition
+service MailerService {
+    rpc SendVerification(mailer.SendVerificationRequest) returns (mailer.SendVerificationResponse);
+    rpc Ping(google.protobuf.Empty) returns (PingResponse);
+    // Other RPC methods as needed
+}
+
